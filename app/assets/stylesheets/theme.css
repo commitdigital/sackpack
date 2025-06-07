@@ -1,0 +1,42 @@
+* {
+  font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+}
+
+body {
+  background-color: #FFFCF2;
+  color: #403D39;
+  padding: 10vh 10vw;
+}
+
+.h1 {
+  color: #252422;
+  font-size: 2rem;
+}
+
+input {
+  font-size: 1rem;
+}
+
+input[type=email],
+input[type=password],
+input[type=text] {
+  background-color: #fff;
+  border: 1px solid #252422;
+  color: #403D39;
+  font-weight: normal;
+  padding: 0.2rem;
+  width: 15rem;
+}
+
+input[type=submit] {
+  background: #CCC5B9;
+  border: 1px solid #252422;
+  margin-top: 1.25rem;
+  padding: 0.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+}

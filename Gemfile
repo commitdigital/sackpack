@@ -52,9 +52,23 @@ group :development, :test do
 
   # RSpec testing framework for Rails [https://github.com/rspec/rspec-rails]
   gem "rspec-rails"
+
+  gem "factory_bot_rails"
+
+  # Accessibility testing
+  gem "axe-core-rspec"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  gem "guard-rspec", require: false
+end
+
+group :test do
+  gem "capybara"
+  gem "selenium-webdriver"
+
+  gem "launchy"
 end
