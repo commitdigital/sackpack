@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe User, type: :model do
   describe "associations" do
     it { should have_many(:categories).dependent(:destroy) }
+    it { should have_many(:items).dependent(:destroy) }
     it { should have_many(:locations).dependent(:destroy) }
     it { should have_many(:sessions).dependent(:destroy) }
   end
@@ -30,6 +31,12 @@ RSpec.describe User, type: :model do
         [ "Living room", false ],
         [ "Attic", true ]
       ])
+    end
+
+    it "creates an item after creation" do
+      user = User.create_with_defaults(FactoryBot.attributes_for(:user))
+      items = user.items.pluck(:name)
+      expect(items).to match_array([ "Towel" ])
     end
   end
 end

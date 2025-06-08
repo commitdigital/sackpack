@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :categories, dependent: :destroy
+  has_many :items, dependent: :destroy
   has_many :locations, dependent: :destroy
   has_many :sessions, dependent: :destroy
 
@@ -13,8 +14,8 @@ class User < ApplicationRecord
           { name: "Books" },
           { name: "Clothing" },
           { name: "Electronics" },
-          [ name: "Footwear & accessories" ],
-          [ name: "Hobbies" ]
+          { name: "Footwear & accessories" },
+          { name: "Hobbies" }
         ])
 
         user.locations << Location.create([
@@ -23,6 +24,15 @@ class User < ApplicationRecord
           { name: "Closet" },
           { name: "Living room" },
           { name: "Attic", storage: true }
+        ])
+
+        user.items << Item.create([
+          {
+            name: "Towel",
+            note: "About the most massively useful thing to carry.",
+            category: user.categories.find_by(name: "Footwear & accessories"),
+            location: user.locations.find_by(name: "Me")
+          }
         ])
       end
     end
