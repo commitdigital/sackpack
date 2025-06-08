@@ -24,10 +24,10 @@
 
   <body>
 
-    <%= tag.div(flash[:alert], style: "color:red", role: "alert") if flash[:alert] %>
-    <%= tag.div(flash[:notice], style: "color:green", role: "alert") if flash[:notice] %>
+    <%= tag.div(flash[:alert], class: "flash-alert", role: "alert") if flash[:alert] %>
+    <%= tag.div(flash[:notice], style: "flash-notice", role: "alert") if flash[:notice] %>
 
-    <nav>
+    <nav class="app-nav">
       <ul>
         <li><%= link_to "Sign in", new_session_path %></li>
         <li><%= link_to "Create account", new_account_path %></li>

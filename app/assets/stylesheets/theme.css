@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
 }
 
@@ -22,21 +23,62 @@ input[type=password],
 input[type=text] {
   background-color: #fff;
   border: 1px solid #252422;
+  border-radius: 0.25rem;
   color: #403D39;
   font-weight: normal;
-  padding: 0.2rem;
+  padding: 0.25rem;
   width: 15rem;
 }
 
 input[type=submit] {
   background: #CCC5B9;
   border: 1px solid #252422;
+  border-radius: 0.25rem;
   margin-top: 1.25rem;
-  padding: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+input[type=submit]:hover {
+  background: #ede6d9;
 }
 
 label {
   display: block;
   font-size: 0.875rem;
   margin-top: 0.75rem;
+}
+
+.app-nav {
+  ul {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    background: #C64512;
+    border-radius: 0.25rem;
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  a:hover {
+    background: #B43F11;
+  }
+}
+
+.flash-alert {
+  background: #FFDA62;
+  border-radius: 0.25rem;
+  color: #C64512;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
 }
