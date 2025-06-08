@@ -16,6 +16,7 @@ RSpec.describe "Create account", type: :system do
     user = User.first
     expect(user.email_address).to eq("newuser@example.com")
 
+    expect(user.categories).not_to be_empty
     expect(user.locations).not_to be_empty
   end
 end
