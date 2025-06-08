@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Create Account", type: :system do
+RSpec.describe "Create account", type: :system do
   scenario "Create an account happy path" do
     visit "/"
     click_link "Create account"
@@ -15,5 +15,7 @@ RSpec.describe "Create Account", type: :system do
     expect(User.count).to eq(1)
     user = User.first
     expect(user.email_address).to eq("newuser@example.com")
+
+    expect(user.locations).not_to be_empty
   end
 end

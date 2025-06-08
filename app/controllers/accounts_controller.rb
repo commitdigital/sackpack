@@ -6,8 +6,7 @@ class AccountsController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
+    if (@user = User.create_with_defaults(user_params))
       redirect_to root_path, notice: "Account created"
     else
       render :new

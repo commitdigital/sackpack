@@ -71,4 +71,8 @@ group :test do
   gem "selenium-webdriver"
 
   gem "launchy"
+
+  # One-liners to test common Rails functionality that, if written by hand, would be much longer,
+  # more complex, and error-prone [https://github.com/thoughtbot/shoulda-matchers]
+  gem "shoulda-matchers"
 end
