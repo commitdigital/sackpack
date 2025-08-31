@@ -38,11 +38,20 @@ en:
     index:
       categories: "Categories"
       new_category: "New category"
+  locations:
+    edit:
+      edit_location: "Edit location"
+    index:
+      locations: "Locations"
+      new_location: "New location"
+    new:
+      new_location: "New location"
   layouts:
     application:
       account_navigation: "Account navigation"
       app_navigation: "App navigation"
       categories: "Categories"
+      locations: "Locations"
       create_account: "Create account"
       sign_in: "Sign in"
       sign_out: "Sign out"

@@ -1,0 +1,4 @@
+<%= turbo_frame_tag @location do %>
+  <h2 class="h2"><%= t(".new_location") %></h2>
+  <%= render "form", location: @location %>
+<% end %>

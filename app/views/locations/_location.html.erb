@@ -1,0 +1,11 @@
+<%= turbo_frame_tag location do %>
+  <article>
+    <%= location.name %>
+    <% if location.storage? %>
+      <span class="storage-indicator">📦</span>
+    <% end %>
+    <footer>
+      <%= link_to t("actions.edit"), edit_location_path(location) %>
+    </footer>
+  </article>
+<% end %>
