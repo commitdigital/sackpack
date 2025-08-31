@@ -23,6 +23,7 @@ RSpec.describe "Create item", type: :system do
     select location.name, from: "Location"
     fill_in "Purchase value (cents)", with: "150000"
     fill_in "Current value (cents)", with: "100000"
+    fill_in "Discarded on", with: "01/01/2025"
     click_button "Save"
 
     expect(page).to have_text("Item created")
@@ -33,6 +34,7 @@ RSpec.describe "Create item", type: :system do
     expect(item.note).to eq("Work laptop")
     expect(item.category).to eq(category)
     expect(item.location).to eq(location)
+    expect(item.discarded_on).to eq(Date.new(2025, 1, 1))
     expect(item.user).to eq(user)
     expect(page).to have_text("Laptop")
   end

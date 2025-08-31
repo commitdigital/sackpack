@@ -28,6 +28,19 @@
 #       enabled: "ON"
 
 en:
+  activerecord:
+    attributes:
+      item:
+        acquired_on: "Acquired on"
+        category_id: "Category"
+        current_value_cents: "Current value (cents)"
+        discarded_on: "Discarded on"
+        expected_uses: "Expected uses"
+        last_seen_on: "Last seen on"
+        location_id: "Location"
+        name: "Name"
+        note: "Note"
+        purchase_value_cents: "Purchase value (cents)"
   actions:
     cancel: "Cancel"
     edit: "Edit"

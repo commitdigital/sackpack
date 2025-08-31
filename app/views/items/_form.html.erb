@@ -18,27 +18,31 @@
         <%= form.text_area :note %>
       </div>
       <div class="form-field">
-        <%= form.label :category_id, "Category" %>
+        <%= form.label :category_id %>
         <%= form.select :category_id, options_from_collection_for_select(@categories, :id, :name, item.category_id), { prompt: "Select a category" }, { required: true } %>
       </div>
       <div class="form-field">
-        <%= form.label :location_id, "Location" %>
+        <%= form.label :location_id %>
         <%= form.select :location_id, options_from_collection_for_select(@locations, :id, :name, item.location_id), { prompt: "Select a location" }, { required: true } %>
       </div>
       <div class="form-field">
-        <%= form.label :purchase_value_cents, "Purchase value (cents)" %>
+        <%= form.label :purchase_value_cents %>
         <%= form.number_field :purchase_value_cents %>
       </div>
       <div class="form-field">
-        <%= form.label :current_value_cents, "Current value (cents)" %>
+        <%= form.label :current_value_cents %>
         <%= form.number_field :current_value_cents %>
       </div>
       <div class="form-field">
-        <%= form.label :acquired_on, "Acquired on" %>
+        <%= form.label :acquired_on %>
         <%= form.date_field :acquired_on %>
       </div>
       <div class="form-field">
-        <%= form.label :last_seen_on, "Last seen on" %>
+        <%= form.label :discarded_on %>
+        <%= form.date_field :discarded_on %>
+      </div>
+      <div class="form-field">
+        <%= form.label :last_seen_on %>
         <%= form.date_field :last_seen_on %>
       </div>
       <div class="form-field">
