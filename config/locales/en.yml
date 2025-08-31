@@ -45,6 +45,30 @@ en:
     cancel: "Cancel"
     edit: "Edit"
     save: "Save"
+  flash:
+    accounts:
+      already_exists: "Account already exists"
+      created: "Account created"
+    categories:
+      created: "Category created"
+      deleted: "Category deleted"
+      updated: "Category updated"
+    items:
+      created: "Item created"
+      deleted: "Item deleted"
+      updated: "Item updated"
+    locations:
+      created: "Location created"
+      deleted: "Location deleted"
+      updated: "Location updated"
+    passwords:
+      invalid_or_expired: "Password reset link is invalid or has expired."
+      passwords_did_not_match: "Passwords did not match."
+      reset_instructions_sent: "Password reset instructions sent (if user with that email address exists)."
+      reset_successful: "Password has been reset."
+    sessions:
+      invalid_credentials: "Try another email address or password."
+      rate_limit: "Try again later."
   categories:
     edit:
       edit_category: "Edit category"

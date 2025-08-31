@@ -7,13 +7,13 @@ class AccountsController < ApplicationController
 
   def create
     if User.exists?(email_address: user_params[:email_address])
-      redirect_to new_session_path, alert: "Account already exists"
+      redirect_to new_session_path, alert: t("flash.accounts.already_exists")
       return
     end
 
     @user = User.create_with_defaults(user_params)
     if @user.persisted?
-      redirect_to root_path, notice: "Account created"
+      redirect_to root_path, notice: t("flash.accounts.created")
     else
       render :new
     end

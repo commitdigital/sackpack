@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     @category.user = Current.user
     if @category.save
-      redirect_to categories_path, notice: "Category created"
+      redirect_to categories_path, notice: t("flash.categories.created")
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,7 +25,7 @@ class CategoriesController < ApplicationController
 
   def update
     if @category.update(category_params)
-      redirect_to categories_path, notice: "Category updated"
+      redirect_to categories_path, notice: t("flash.categories.updated")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
   def destroy
     @categories.destroy
     respond_to do |format|
-      format.html { redirect_to categories_path, notice: "Category deleted" }
+      format.html { redirect_to categories_path, notice: t("flash.categories.deleted") }
       format.turbo_stream { render turbo_stream: turbo_stream.remove(@category) }
     end
   end

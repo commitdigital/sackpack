@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = Current.user
     if @item.save
-      redirect_to items_path, notice: "Item created"
+      redirect_to items_path, notice: t("flash.items.created")
     else
       @categories = Current.user.categories
       @locations = Current.user.locations
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to items_path, notice: "Item updated"
+      redirect_to items_path, notice: t("flash.items.updated")
     else
       @categories = Current.user.categories
       @locations = Current.user.locations
@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_path, notice: "Item deleted" }
+      format.html { redirect_to items_path, notice: t("flash.items.deleted") }
       format.turbo_stream { render turbo_stream: turbo_stream.remove(@item) }
     end
   end
