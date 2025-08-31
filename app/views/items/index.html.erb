@@ -1,0 +1,9 @@
+<main>
+  <h1 class="h1"><%= t(".items") %></h1>
+  <%= turbo_frame_tag "items" do %>
+    <%= render partial: "item", collection: @items %>
+  <% end %>
+  <%= turbo_frame_tag "new_item", target: "_top" do %>
+    <%= add_button(label: t(".new_item"), turbo_frame: "new_item", path: new_item_path) %>
+  <% end %>
+</main>

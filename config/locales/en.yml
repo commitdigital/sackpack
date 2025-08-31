@@ -48,12 +48,21 @@ en:
       new_location: "New location"
     new:
       new_location: "New location"
+  items:
+    edit:
+      edit_item: "Edit item"
+    index:
+      items: "Items"
+      new_item: "New item"
+    new:
+      new_item: "New item"
   layouts:
     application:
       account_navigation: "Account navigation"
       app_navigation: "App navigation"
       categories: "Categories"
       locations: "Locations"
+      items: "Items"
       create_account: "Create account"
       sign_in: "Sign in"
       sign_out: "Sign out"

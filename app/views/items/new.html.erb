@@ -1,0 +1,4 @@
+<%= turbo_frame_tag @item do %>
+  <h2 class="h2"><%= t(".new_item") %></h2>
+  <%= render "form", item: @item %>
+<% end %>

@@ -6,6 +6,8 @@ FactoryBot.define do
 
   factory :item do
     association :user
+    association :category
+    association :location
     sequence(:name) { |n| "Item #{n}" }
     purchase_value { 1_000 }
     current_value { 500 }
