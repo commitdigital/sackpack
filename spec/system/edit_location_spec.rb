@@ -14,8 +14,8 @@ RSpec.describe "Create location", type: :system do
     location = FactoryBot.create(:location, user:)
     visit "/locations"
     click_link "Edit"
-    expect(page).to be_axe_clean
     expect(page).to have_selector("h2", text: "Edit location")
+    expect(page).to be_axe_clean
     fill_in "Name", with: "Kitchen"
     check "Storage location"
     click_button "Save"

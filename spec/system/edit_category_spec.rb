@@ -14,8 +14,8 @@ RSpec.describe "Create category", type: :system do
     category = FactoryBot.create(:category, user:)
     visit "/categories"
     click_link "Edit", match: :first
-    expect(page).to be_axe_clean
     expect(page).to have_selector("h2", text: "Edit category")
+    expect(page).to be_axe_clean
     fill_in "Name", with: "Books"
     click_button "Save"
 

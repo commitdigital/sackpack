@@ -13,8 +13,8 @@ RSpec.describe "Create category", type: :system do
   scenario "Create a category" do
     visit "/categories"
     click_link "New category"
-    expect(page).to be_axe_clean
     expect(page).to have_selector("h2", text: "New category")
+    expect(page).to be_axe_clean
     fill_in "Name", with: "Music"
     click_button "Save"
 
