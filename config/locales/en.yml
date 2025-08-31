@@ -41,6 +41,8 @@ en:
   layouts:
     application:
       account_navigation: "Account navigation"
+      app_navigation: "App navigation"
+      categories: "Categories"
       create_account: "Create account"
       sign_in: "Sign in"
       sign_out: "Sign out"

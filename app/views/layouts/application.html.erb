@@ -38,6 +38,13 @@
           <% end %>
         </ul>
       </nav>
+      <% if authenticated? %>
+        <nav aria-label="<%= t(".app_navigation") %>" class="app-nav">
+          <ul>
+            <li><%= link_to t(".categories"), categories_path %></li>
+          </ul>
+        </nav>
+      <% end %>
     </header>
 
     <%= yield %>
