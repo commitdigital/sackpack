@@ -2,7 +2,12 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [ :edit, :update, :destroy ]
 
   def index
-    @items = Current.user.items.includes(:category, :location)
+    @items_by_category = Current.user.categories
+                                     .joins(:items)
+                                     .includes(items: :location)
+                                     .order(:name)
+                                     .group_by(&:itself)
+                                     .transform_values { |categories| categories.first.items }
   end
 
   def new

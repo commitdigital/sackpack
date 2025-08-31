@@ -18,8 +18,8 @@ RSpec.describe "View items", type: :system do
     click_link "Items"
     expect(page).to be_axe_clean
     expect(page).to have_css "h1", text: "Items"
+    expect(page).to have_css "h2", text: "Electronics"
     expect(page).to have_content "Phone"
-    expect(page).to have_content "Electronics"
     expect(page).to have_content "Desk"
   end
 end

@@ -1,11 +1,10 @@
 <%= turbo_frame_tag item do %>
   <article>
-    <h2><%= item.name %></h2>
+    <h3><%= item.name %></h3>
     <% if item.note.present? %>
       <p><%= item.note %></p>
     <% end %>
     <div class="item-details">
-      <span class="category"><%= item.category.name %></span>
       <span class="location"><%= item.location.name %></span>
       <% if item.location.storage? %>
         <span class="storage-indicator">📦</span>
