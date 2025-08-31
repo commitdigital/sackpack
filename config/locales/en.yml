@@ -28,6 +28,16 @@
 #       enabled: "ON"
 
 en:
+  actions:
+    cancel: "Cancel"
+    edit: "Edit"
+    save: "Save"
+  categories:
+    edit:
+      edit_category: "Edit category"
+    index:
+      categories: "Categories"
+      new_category: "New category"
   passwords:
     new:
       heading: "Forgot your password?"

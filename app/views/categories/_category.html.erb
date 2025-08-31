@@ -1,0 +1,8 @@
+<%= turbo_frame_tag category do %>
+  <article>
+    <%= category.name %>
+    <footer>
+      <%= link_to t("actions.edit"), edit_category_path(category) %>
+    </footer>
+  </article>
+<% end %>

@@ -1,0 +1,9 @@
+<main>
+  <h1 class="h1"><%= t(".categories") %></h1>
+  <%= turbo_frame_tag "categories" do %>
+    <%= render partial: "category", collection: @categories %>
+  <% end %>
+  <%= turbo_frame_tag "new_category", target: "_top" do %>
+    <%= add_button(label: t(".new_category"), turbo_frame: "new_category", path: new_category_path) %>
+  <% end %>
+</main>

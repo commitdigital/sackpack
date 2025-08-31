@@ -1,0 +1,22 @@
+<div class="category-card">
+  <div class="category-form">
+    <% if category.errors.any? %>
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <ul>
+        <% category.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <%= form_with model: category do |form| %>
+      <div class="form-field">
+        <%= form.label :name %>
+        <%= form.text_field :name, required: true %>
+      </div>
+      <div class="category-actions">
+        <%= link_to t("actions.cancel"), categories_path, class: "btn-cancel" %>
+        <%= submit_tag t("actions.save"), class: "btn-icon btn-save", title: t("actions.save") %>
+      </div>
+    <% end %>
+  </div>
+</div>
