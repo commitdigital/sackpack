@@ -1,7 +1,7 @@
 <div class="location-card">
   <div class="location-form">
     <% if location.errors.any? %>
-      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
+      <h2><%= pluralize(location.errors.count, t("forms.errors.error")) %> <%= t("forms.errors.prohibited_save", model: "location") %></h2>
       <ul>
         <% location.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -15,7 +15,7 @@
       </div>
       <div class="form-field">
         <%= form.check_box :storage %>
-        <%= form.label :storage, "Storage location" %>
+        <%= form.label :storage, t("forms.labels.storage_location") %>
       </div>
       <div class="location-actions">
         <%= link_to t("actions.cancel"), locations_path, class: "btn-cancel" %>

@@ -1,7 +1,7 @@
 <div class="item-card">
   <div class="item-form">
     <% if item.errors.any? %>
-      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <h2><%= pluralize(item.errors.count, t("forms.errors.error")) %> <%= t("forms.errors.prohibited_save", model: "item") %></h2>
       <ul>
         <% item.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -19,11 +19,11 @@
       </div>
       <div class="form-field">
         <%= form.label :category_id %>
-        <%= form.select :category_id, options_from_collection_for_select(@categories, :id, :name, item.category_id), { prompt: "Select a category" }, { required: true } %>
+        <%= form.select :category_id, options_from_collection_for_select(@categories, :id, :name, item.category_id), { prompt: t("forms.prompts.select_category") }, { required: true } %>
       </div>
       <div class="form-field">
         <%= form.label :location_id %>
-        <%= form.select :location_id, options_from_collection_for_select(@locations, :id, :name, item.location_id), { prompt: "Select a location" }, { required: true } %>
+        <%= form.select :location_id, options_from_collection_for_select(@locations, :id, :name, item.location_id), { prompt: t("forms.prompts.select_location") }, { required: true } %>
       </div>
       <div class="form-field">
         <%= form.label :purchase_value_cents %>

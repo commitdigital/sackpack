@@ -69,6 +69,27 @@ en:
     sessions:
       invalid_credentials: "Try another email address or password."
       rate_limit: "Try again later."
+  forms:
+    buttons:
+      create_account: "Create account"
+      email_reset_instructions: "Email reset instructions"
+      save_password: "Save"
+      sign_in: "Sign in"
+    errors:
+      error: "error"
+      prohibited_save: "prohibited this %{model} from being saved:"
+    labels:
+      storage_location: "Storage location"
+    placeholders:
+      email_address: "Enter your email address"
+      new_password: "Enter new password"
+      repeat_password: "Repeat new password"
+    prompts:
+      select_category: "Select a category"
+      select_location: "Select a location"
+  accounts:
+    new:
+      heading: "Create account"
   categories:
     edit:
       edit_category: "Edit category"
@@ -107,8 +128,11 @@ en:
       sign_in: "Sign in"
       sign_out: "Sign out"
   passwords:
+    edit:
+      heading: "Update your password"
     new:
       heading: "Forgot your password?"
   sessions:
     new:
+      forgot_password: "Forgot password?"
       heading: "Sign in"

@@ -1,7 +1,7 @@
 <div class="category-card">
   <div class="category-form">
     <% if category.errors.any? %>
-      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <h2><%= pluralize(category.errors.count, t("forms.errors.error")) %> <%= t("forms.errors.prohibited_save", model: "category") %></h2>
       <ul>
         <% category.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
