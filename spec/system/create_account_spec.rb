@@ -26,6 +26,7 @@ RSpec.describe "Create account", type: :system do
     FactoryBot.create(:user, email_address: "existinguser@example.com")
     visit "/"
     click_link "Create account"
+    expect(page).to have_selector("h1", text: "Create account")
     fill_in "Email address", with: "existinguser@example.com"
     fill_in "Password", with: "password"
     click_button "Create account"
