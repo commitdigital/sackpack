@@ -22,7 +22,7 @@ RSpec.describe "Create location", type: :system do
     expect(page).to have_text("Location created")
     expect(page).to be_axe_clean
     expect(Location.count).to eq(1)
-    location = Location.first
+    location = Location.eager_load(:user).first
     expect(location.name).to eq("Garage")
     expect(location.storage).to be(true)
     expect(location.user).to eq(user)

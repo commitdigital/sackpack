@@ -21,7 +21,7 @@ RSpec.describe "Create category", type: :system do
     expect(page).to have_text("Category created")
     expect(page).to be_axe_clean
     expect(Category.count).to eq(1)
-    category = Category.first
+    category = Category.eager_load(:user).first
     expect(category.name).to eq("Music")
     expect(category.user).to eq(user)
     expect(page).to have_text("Music")
