@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  self.strict_loading_by_default = true
+
   # Money fields
   monetize :purchase_value_cents
   monetize :current_value_cents

@@ -28,7 +28,7 @@ RSpec.describe "Create item", type: :system do
     expect(page).to have_text("Item created")
     expect(page).to be_axe_clean
     expect(Item.count).to eq(1)
-    item = Item.first
+    item = Item.eager_load(:category, :location, :user).first
     expect(item.name).to eq("Laptop")
     expect(item.note).to eq("Work laptop")
     expect(item.category).to eq(category)
