@@ -9,4 +9,4 @@
 #   end
 
 User.destroy_all
-User.create!(email_address: "user@example.com", password: "password")
+User.create_with_defaults(email_address: "user@example.com", password: "password")
