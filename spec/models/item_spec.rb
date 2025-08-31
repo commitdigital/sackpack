@@ -8,6 +8,8 @@ RSpec.describe Item, type: :model do
   end
 
   describe "validations" do
+    it { should validate_numericality_of(:expected_uses).is_greater_than_or_equal_to(0) }
+
     let(:user) { FactoryBot.create(:user) }
     let(:other_user) { FactoryBot.create(:user) }
     let(:category) { FactoryBot.create(:category, user:) }

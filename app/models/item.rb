@@ -11,6 +11,7 @@ class Item < ApplicationRecord
   belongs_to :location
 
   # Validations
+  validates :expected_uses, numericality: { greater_than_or_equal_to: 0 }
   validate :category_belongs_to_user
   validate :location_belongs_to_user
 
