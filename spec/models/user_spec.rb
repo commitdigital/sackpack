@@ -8,6 +8,12 @@ RSpec.describe User, type: :model do
     it { should have_many(:sessions).dependent(:destroy) }
   end
 
+  describe "validations" do
+    subject { FactoryBot.build(:user) }
+    it { should validate_presence_of(:email_address) }
+    it { should validate_uniqueness_of(:email_address).case_insensitive }
+  end
+
   describe ".create_with_defaults" do
     it "creates categories after creation" do
       user = User.create_with_defaults(FactoryBot.attributes_for(:user))

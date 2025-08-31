@@ -1,9 +1,14 @@
 class User < ApplicationRecord
   has_secure_password
+
+  # Associations
   has_many :categories, dependent: :destroy
   has_many :items, dependent: :destroy
   has_many :locations, dependent: :destroy
   has_many :sessions, dependent: :destroy
+
+  # Validations
+  validates :email_address, presence: true, uniqueness: { case_sensitive: false }
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
 

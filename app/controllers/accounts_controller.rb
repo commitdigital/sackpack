@@ -6,7 +6,13 @@ class AccountsController < ApplicationController
   end
 
   def create
-    if (@user = User.create_with_defaults(user_params))
+    if User.exists?(email_address: user_params[:email_address])
+      redirect_to new_session_path, alert: "Account already exists"
+      return
+    end
+
+    @user = User.create_with_defaults(user_params)
+    if @user.persisted?
       redirect_to root_path, notice: "Account created"
     else
       render :new
