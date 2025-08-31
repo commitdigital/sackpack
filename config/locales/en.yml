@@ -66,7 +66,10 @@ en:
       edit_item: "Edit item"
     index:
       items: "Items"
+      discarded_items: "Discarded items"
       new_item: "New item"
+      show_current_items: "Show current items"
+      show_discarded_items: "Show discarded items"
     new:
       new_item: "New item"
   layouts:

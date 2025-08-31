@@ -2,12 +2,12 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [ :edit, :update, :destroy ]
 
   def index
-    @items_by_category = Current.user.categories
-                                     .joins(:items)
-                                     .includes(items: :location)
-                                     .order(:name)
-                                     .group_by(&:itself)
-                                     .transform_values { |categories| categories.first.items }
+    @items_by_category = items_by_category_for(discarded: false)
+  end
+
+  def discarded
+    @items_by_category = items_by_category_for(discarded: true)
+    render :index
   end
 
   def new
@@ -59,5 +59,16 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :note, :category_id, :location_id, :purchase_value_cents, :current_value_cents, :acquired_on, :discarded_on, :last_seen_on, :expected_uses)
+  end
+
+  def items_by_category_for(discarded:)
+    condition = discarded ? "IS NOT NULL" : "IS NULL"
+    Current.user.categories
+                .joins(:items)
+                .includes(items: :location)
+                .where("items.discarded_on #{condition}")
+                .order(:name)
+                .group_by(&:itself)
+                .transform_values { |categories| categories.first.items.where(discarded ? "discarded_on IS NOT NULL" : "discarded_on IS NULL") }
   end
 end
