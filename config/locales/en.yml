@@ -38,6 +38,12 @@ en:
     index:
       categories: "Categories"
       new_category: "New category"
+  layouts:
+    application:
+      account_navigation: "Account navigation"
+      create_account: "Create account"
+      sign_in: "Sign in"
+      sign_out: "Sign out"
   passwords:
     new:
       heading: "Forgot your password?"

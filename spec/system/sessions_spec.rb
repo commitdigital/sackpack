@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "Sessions", type: :system do
-  scenario "Sign in" do
+  scenario "Sign in and sign out" do
     FactoryBot.create(:user, email_address: "user@example.com", password: "topsecret")
 
     visit "/session/new"
@@ -13,6 +13,14 @@ RSpec.describe "Sessions", type: :system do
 
     expect(page).to have_content("Welcome to Sackpack!")
     expect(page).to be_axe_clean
+
+    expect(page).not_to have_content("Sign in")
+    expect(page).to have_content("Sign out")
+
+    click_link "Sign out"
+
+    expect(page).to have_content("Sign in")
+    expect(page).not_to have_content("Sign out")
   end
 
   scenario "Sign in with invalid credentials" do

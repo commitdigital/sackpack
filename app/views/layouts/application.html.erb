@@ -27,12 +27,18 @@
     <%= tag.div(flash[:alert], class: "flash-alert", role: "alert") if flash[:alert] %>
     <%= tag.div(flash[:notice], style: "flash-notice", role: "alert") if flash[:notice] %>
 
-    <nav class="app-nav">
-      <ul>
-        <li><%= link_to "Sign in", new_session_path %></li>
-        <li><%= link_to "Create account", new_account_path %></li>
-      </ul>
-    </nav>
+    <header>
+      <nav aria-label="<%= t(".account_navigation") %>" class="app-nav">
+        <ul>
+          <% if authenticated? %>
+            <li><%= link_to t(".sign_out"), session_path, data: { "turbo-method": :delete } %></li>
+          <% else %>
+            <li><%= link_to t(".sign_in"), new_session_path %></li>
+            <li><%= link_to t(".create_account"), new_account_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
 
     <%= yield %>
   </body>
