@@ -1,4 +1,4 @@
 <%= turbo_frame_tag @category do %>
-  <h2 class="h2">New category</h2>
+  <h2 class="h2"><%= t(".new_category") %></h2>
   <%= render "form", category: @category %>
 <% end %>

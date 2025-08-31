@@ -38,6 +38,8 @@ en:
     index:
       categories: "Categories"
       new_category: "New category"
+    new:
+      new_category: "New category"
   locations:
     edit:
       edit_location: "Edit location"
