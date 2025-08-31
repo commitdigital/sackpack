@@ -9,7 +9,7 @@ RSpec.describe "Create account", type: :system do
     expect(page).to be_axe_clean
     expect(page).to have_selector("h1", text: "Create account")
     fill_in "Email address", with: "newuser@example.com"
-    fill_in "Password", with: "password"
+    fill_in "Password", with: "topsecret"
     click_button "Create account"
 
     expect(page).to have_text("Account created")
@@ -28,7 +28,7 @@ RSpec.describe "Create account", type: :system do
     click_link "Create account"
     expect(page).to have_selector("h1", text: "Create account")
     fill_in "Email address", with: "existinguser@example.com"
-    fill_in "Password", with: "password"
+    fill_in "Password", with: "topsecret"
     click_button "Create account"
 
     expect(page).to have_text("Account already exists")
