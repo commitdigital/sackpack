@@ -1,6 +1,8 @@
 ja:
   activerecord:
     attributes:
+      category:
+        name: "名前"
       item:
         acquired_on: "取得日"
         category_id: "カテゴリ"
@@ -12,6 +14,9 @@ ja:
         name: "名前"
         note: "メモ"
         purchase_value_cents: "購入価格（セント）"
+      location:
+        name: "名前"
+        storage: "保管場所"
   actions:
     cancel: "キャンセル"
     edit: "編集"
