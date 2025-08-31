@@ -1,0 +1,114 @@
+es:
+  activerecord:
+    attributes:
+      item:
+        acquired_on: "Fecha de adquisición"
+        category_id: "Categoría"
+        current_value_cents: "Valor actual (centavos)"
+        discarded_on: "Fecha de descarte"
+        expected_uses: "Usos esperados"
+        last_seen_on: "Última vez visto"
+        location_id: "Ubicación"
+        name: "Nombre"
+        note: "Nota"
+        purchase_value_cents: "Precio de compra (centavos)"
+  actions:
+    cancel: "Cancelar"
+    edit: "Editar"
+    save: "Guardar"
+  flash:
+    accounts:
+      already_exists: "La cuenta ya existe"
+      created: "Cuenta creada"
+    categories:
+      created: "Categoría creada"
+      deleted: "Categoría eliminada"
+      updated: "Categoría actualizada"
+    items:
+      created: "Artículo creado"
+      deleted: "Artículo eliminado"
+      updated: "Artículo actualizado"
+    locations:
+      created: "Ubicación creada"
+      deleted: "Ubicación eliminada"
+      updated: "Ubicación actualizada"
+    passwords:
+      invalid_or_expired: "El enlace de restablecimiento de contraseña es inválido o ha expirado."
+      passwords_did_not_match: "Las contraseñas no coinciden."
+      reset_instructions_sent: "Instrucciones de restablecimiento de contraseña enviadas (si existe un usuario con esa dirección de correo)."
+      reset_successful: "La contraseña ha sido restablecida."
+    sessions:
+      invalid_credentials: "Prueba con otra dirección de correo o contraseña."
+      rate_limit: "Inténtalo de nuevo más tarde."
+  forms:
+    buttons:
+      create_account: "Crear cuenta"
+      email_reset_instructions: "Enviar instrucciones por correo"
+      save_password: "Guardar"
+      sign_in: "Iniciar sesión"
+    errors:
+      error: "error"
+      prohibited_save: "impidió que este %{model} fuera guardado:"
+    labels:
+      storage_location: "Ubicación de almacenamiento"
+    placeholders:
+      email_address: "Ingresa tu dirección de correo"
+      new_password: "Ingresa nueva contraseña"
+      repeat_password: "Repite la contraseña"
+    prompts:
+      select_category: "Selecciona una categoría"
+      select_location: "Selecciona una ubicación"
+  languages:
+    english: "Inglés"
+    japanese: "Japonés"
+    spanish: "Español"
+  accounts:
+    new:
+      heading: "Crear cuenta"
+  categories:
+    edit:
+      edit_category: "Editar categoría"
+    index:
+      categories: "Categorías"
+      new_category: "Nueva categoría"
+    new:
+      new_category: "Nueva categoría"
+  items:
+    edit:
+      edit_item: "Editar artículo"
+    index:
+      discarded_items: "Artículos descartados"
+      items: "Artículos"
+      new_item: "Nuevo artículo"
+      show_current_items: "Mostrar artículos actuales"
+      show_discarded_items: "Mostrar artículos descartados"
+    new:
+      new_item: "Nuevo artículo"
+  layouts:
+    application:
+      account_navigation: "Navegación de cuenta"
+      app_navigation: "Navegación de aplicación"
+      categories: "Categorías"
+      create_account: "Crear cuenta"
+      items: "Artículos"
+      locations: "Ubicaciones"
+      sign_in: "Iniciar sesión"
+      sign_out: "Cerrar sesión"
+      language: "Idioma"
+  locations:
+    edit:
+      edit_location: "Editar ubicación"
+    index:
+      locations: "Ubicaciones"
+      new_location: "Nueva ubicación"
+    new:
+      new_location: "Nueva ubicación"
+  passwords:
+    edit:
+      heading: "Actualiza tu contraseña"
+    new:
+      heading: "¿Olvidaste tu contraseña?"
+  sessions:
+    new:
+      forgot_password: "¿Olvidaste tu contraseña?"
+      heading: "Iniciar sesión"

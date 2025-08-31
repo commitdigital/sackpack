@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   end
   resources :locations
 
+  patch "language", to: "languages#update"
+
   # Defines the root path route ("/")
   root "home#index"
 end

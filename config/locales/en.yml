@@ -87,6 +87,10 @@ en:
     prompts:
       select_category: "Select a category"
       select_location: "Select a location"
+  languages:
+    english: "English"
+    japanese: "Japanese"
+    spanish: "Spanish"
   accounts:
     new:
       heading: "Create account"
@@ -127,6 +131,7 @@ en:
       create_account: "Create account"
       sign_in: "Sign in"
       sign_out: "Sign out"
+      language: "Language"
   passwords:
     edit:
       heading: "Update your password"

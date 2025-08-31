@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= I18n.locale %>">
   <head>
     <title><%= content_for(:title) || "Sackpack" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -50,5 +50,16 @@
     </header>
 
     <%= yield %>
+    
+    <footer>
+      <%= form_with url: language_path, method: :patch, local: true do |form| %>
+        <%= form.label :language, t(".language") %>
+        <%= form.select :language, options_for_select([
+          [t("languages.english"), "en"],
+          [t("languages.japanese"), "ja"], 
+          [t("languages.spanish"), "es"]
+        ], I18n.locale.to_s), {}, { onchange: "this.form.submit();" } %>
+      <% end %>
+    </footer>
   </body>
 </html>

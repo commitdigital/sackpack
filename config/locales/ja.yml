@@ -1,0 +1,114 @@
+ja:
+  activerecord:
+    attributes:
+      item:
+        acquired_on: "取得日"
+        category_id: "カテゴリ"
+        current_value_cents: "現在の価値（セント）"
+        discarded_on: "廃棄日"
+        expected_uses: "予想使用回数"
+        last_seen_on: "最終確認日"
+        location_id: "場所"
+        name: "名前"
+        note: "メモ"
+        purchase_value_cents: "購入価格（セント）"
+  actions:
+    cancel: "キャンセル"
+    edit: "編集"
+    save: "保存"
+  flash:
+    accounts:
+      already_exists: "アカウントは既に存在します"
+      created: "アカウントが作成されました"
+    categories:
+      created: "カテゴリが作成されました"
+      deleted: "カテゴリが削除されました"
+      updated: "カテゴリが更新されました"
+    items:
+      created: "アイテムが作成されました"
+      deleted: "アイテムが削除されました"
+      updated: "アイテムが更新されました"
+    locations:
+      created: "場所が作成されました"
+      deleted: "場所が削除されました"
+      updated: "場所が更新されました"
+    passwords:
+      invalid_or_expired: "パスワードリセットリンクが無効または期限切れです。"
+      passwords_did_not_match: "パスワードが一致しませんでした。"
+      reset_instructions_sent: "パスワードリセット手順を送信しました（そのメールアドレスのユーザーが存在する場合）。"
+      reset_successful: "パスワードがリセットされました。"
+    sessions:
+      invalid_credentials: "別のメールアドレスまたはパスワードを試してください。"
+      rate_limit: "後でもう一度お試しください。"
+  forms:
+    buttons:
+      create_account: "アカウント作成"
+      email_reset_instructions: "リセット手順をメール送信"
+      save_password: "保存"
+      sign_in: "サインイン"
+    errors:
+      error: "エラー"
+      prohibited_save: "この%{model}の保存が禁止されました:"
+    labels:
+      storage_location: "保管場所"
+    placeholders:
+      email_address: "メールアドレスを入力"
+      new_password: "新しいパスワードを入力"
+      repeat_password: "パスワードを再入力"
+    prompts:
+      select_category: "カテゴリを選択"
+      select_location: "場所を選択"
+  languages:
+    english: "英語"
+    japanese: "日本語"
+    spanish: "スペイン語"
+  accounts:
+    new:
+      heading: "アカウント作成"
+  categories:
+    edit:
+      edit_category: "カテゴリ編集"
+    index:
+      categories: "カテゴリ"
+      new_category: "新しいカテゴリ"
+    new:
+      new_category: "新しいカテゴリ"
+  items:
+    edit:
+      edit_item: "アイテム編集"
+    index:
+      discarded_items: "廃棄されたアイテム"
+      items: "アイテム"
+      new_item: "新しいアイテム"
+      show_current_items: "現在のアイテムを表示"
+      show_discarded_items: "廃棄されたアイテムを表示"
+    new:
+      new_item: "新しいアイテム"
+  layouts:
+    application:
+      account_navigation: "アカウントナビゲーション"
+      app_navigation: "アプリナビゲーション"
+      categories: "カテゴリ"
+      create_account: "アカウント作成"
+      items: "アイテム"
+      locations: "場所"
+      sign_in: "サインイン"
+      sign_out: "サインアウト"
+      language: "言語"
+  locations:
+    edit:
+      edit_location: "場所編集"
+    index:
+      locations: "場所"
+      new_location: "新しい場所"
+    new:
+      new_location: "新しい場所"
+  passwords:
+    edit:
+      heading: "パスワードを更新"
+    new:
+      heading: "パスワードをお忘れですか？"
+  sessions:
+    new:
+      forgot_password: "パスワードをお忘れですか？"
+      heading: "サインイン"
