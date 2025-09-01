@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
     else
       @categories = Current.user.categories
       @locations = Current.user.locations
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 
@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
     else
       @categories = Current.user.categories
       @locations = Current.user.locations
-      render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_content
     end
   end
 
