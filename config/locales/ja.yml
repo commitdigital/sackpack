@@ -10,10 +10,14 @@ ja:
         discarded_on: "廃棄日"
         expected_uses: "予想使用回数"
         last_seen_on: "最終確認日"
+        last_used_on: "最終使用日"
         location_id: "場所"
         name: "名前"
         note: "メモ"
         purchase_value_cents: "購入価格（セント）"
+      usage:
+        note: "メモ"
+        used_on: "使用日"
       location:
         name: "名前"
         storage: "保管場所"
@@ -21,6 +25,9 @@ ja:
     cancel: "キャンセル"
     edit: "編集"
     save: "保存"
+    use: "使用"
+  common:
+    never: "未使用"
   flash:
     accounts:
       already_exists: "アカウントは既に存在します"
@@ -33,6 +40,8 @@ ja:
       created: "アイテムが作成されました"
       deleted: "アイテムが削除されました"
       updated: "アイテムが更新されました"
+    usages:
+      created: "使用記録が作成されました"
     locations:
       created: "場所が作成されました"
       deleted: "場所が削除されました"
@@ -49,6 +58,7 @@ ja:
     buttons:
       create_account: "アカウント作成"
       email_reset_instructions: "リセット手順をメール送信"
+      record_usage: "使用記録"
       save_password: "保存"
       sign_in: "サインイン"
     errors:
@@ -89,6 +99,9 @@ ja:
       show_discarded_items: "廃棄されたアイテムを表示"
     new:
       new_item: "新しいアイテム"
+  usages:
+    new:
+      heading: "%{item}の使用記録"
   layouts:
     application:
       account_navigation: "アカウントナビゲーション"

@@ -18,6 +18,11 @@ FactoryBot.define do
     sequence(:name) { |n| "Location #{n}" }
   end
 
+  factory :usage do
+    association :item
+    used_on { "2025-09-01" }
+  end
+
   factory :user do
     sequence(:email_address) { |n| "user#{n}@example.com" }
     password { "topsecret" }

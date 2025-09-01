@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_08_172515) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_01_003354) do
   create_table "categories", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "name", null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_08_172515) do
     t.integer "expected_uses", default: 30, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "last_used_on"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["location_id"], name: "index_items_on_location_id"
     t.index ["user_id"], name: "index_items_on_user_id"
@@ -58,6 +59,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_08_172515) do
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
+  create_table "usages", force: :cascade do |t|
+    t.integer "item_id", null: false
+    t.date "used_on", null: false
+    t.string "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_usages_on_item_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email_address", null: false
     t.string "password_digest", null: false
@@ -72,4 +82,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_08_172515) do
   add_foreign_key "items", "users"
   add_foreign_key "locations", "users"
   add_foreign_key "sessions", "users"
+  add_foreign_key "usages", "items"
 end

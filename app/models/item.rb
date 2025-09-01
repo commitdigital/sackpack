@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category
   belongs_to :location
+  has_many :usages, dependent: :delete_all
 
   # Validations
   validates :expected_uses, numericality: { greater_than_or_equal_to: 0 }

@@ -10,8 +10,14 @@
         <span class="storage-indicator">📦</span>
       <% end %>
     </div>
+    <div class="item-dates">
+      <span class="date-range">
+        <%= item.acquired_on&.strftime("%Y-%m-%d") || "—" %> → <%= item.last_used_on&.strftime("%Y-%m-%d") || t("common.never") %>
+      </span>
+    </div>
     <footer>
       <%= link_to t("actions.edit"), edit_item_path(item) %>
+      <%= link_to t("actions.use"), new_item_usage_path(item), class: "btn-use", data: { turbo_frame: "_top" } %>
     </footer>
   </article>
 <% end %>

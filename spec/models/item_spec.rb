@@ -5,6 +5,7 @@ RSpec.describe Item, type: :model do
     it { should belong_to(:category) }
     it { should belong_to(:location) }
     it { should belong_to(:user) }
+    it { should have_many(:usages).dependent(:delete_all) }
   end
 
   describe "validations" do

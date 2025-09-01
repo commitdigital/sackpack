@@ -1,0 +1,30 @@
+<main>
+  <h1 class="h1"><%= t(".heading", item: @item.name) %></h1>
+
+  <div class="usage-card">
+    <div class="usage-form">
+      <% if @usage.errors.any? %>
+        <h2><%= pluralize(@usage.errors.count, t("forms.errors.error")) %> <%= t("forms.errors.prohibited_save", model: "usage") %></h2>
+        <ul>
+          <% @usage.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <%= form_with model: [@item, @usage] do |form| %>
+        <div class="form-field">
+          <%= form.label :used_on %>
+          <%= form.date_field :used_on, required: true %>
+        </div>
+        <div class="form-field">
+          <%= form.label :note %>
+          <%= form.text_area :note %>
+        </div>
+        <div class="usage-actions">
+          <%= link_to t("actions.cancel"), items_path, class: "btn-cancel" %>
+          <%= form.submit t("forms.buttons.record_usage"), class: "btn-icon btn-save" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>

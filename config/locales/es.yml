@@ -10,10 +10,14 @@ es:
         discarded_on: "Fecha de descarte"
         expected_uses: "Usos esperados"
         last_seen_on: "Última vez visto"
+        last_used_on: "Última vez usado"
         location_id: "Ubicación"
         name: "Nombre"
         note: "Nota"
         purchase_value_cents: "Precio de compra (centavos)"
+      usage:
+        note: "Nota"
+        used_on: "Fecha de uso"
       location:
         name: "Nombre"
         storage: "Almacenamiento"
@@ -21,6 +25,9 @@ es:
     cancel: "Cancelar"
     edit: "Editar"
     save: "Guardar"
+    use: "Usar"
+  common:
+    never: "Nunca"
   flash:
     accounts:
       already_exists: "La cuenta ya existe"
@@ -33,6 +40,8 @@ es:
       created: "Artículo creado"
       deleted: "Artículo eliminado"
       updated: "Artículo actualizado"
+    usages:
+      created: "Uso registrado"
     locations:
       created: "Ubicación creada"
       deleted: "Ubicación eliminada"
@@ -49,6 +58,7 @@ es:
     buttons:
       create_account: "Crear cuenta"
       email_reset_instructions: "Enviar instrucciones por correo"
+      record_usage: "Registrar uso"
       save_password: "Guardar"
       sign_in: "Iniciar sesión"
     errors:
@@ -89,6 +99,9 @@ es:
       show_discarded_items: "Mostrar artículos descartados"
     new:
       new_item: "Nuevo artículo"
+  usages:
+    new:
+      heading: "Registrar uso para %{item}"
   layouts:
     application:
       account_navigation: "Navegación de cuenta"

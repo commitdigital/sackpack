@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get :discarded
       get "located/:location_id", action: :located, as: :located
     end
+    resources :usages, only: [ :new, :create ]
   end
   resources :locations
 

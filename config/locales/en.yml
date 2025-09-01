@@ -39,10 +39,14 @@ en:
         discarded_on: "Discarded on"
         expected_uses: "Expected uses"
         last_seen_on: "Last seen on"
+        last_used_on: "Last used on"
         location_id: "Location"
         name: "Name"
         note: "Note"
         purchase_value_cents: "Purchase value (cents)"
+      usage:
+        note: "Note"
+        used_on: "Used on"
       location:
         name: "Name"
         storage: "Storage"
@@ -50,6 +54,9 @@ en:
     cancel: "Cancel"
     edit: "Edit"
     save: "Save"
+    use: "Use"
+  common:
+    never: "Never"
   flash:
     accounts:
       already_exists: "Account already exists"
@@ -62,6 +69,8 @@ en:
       created: "Item created"
       deleted: "Item deleted"
       updated: "Item updated"
+    usages:
+      created: "Usage recorded"
     locations:
       created: "Location created"
       deleted: "Location deleted"
@@ -78,6 +87,7 @@ en:
     buttons:
       create_account: "Create account"
       email_reset_instructions: "Email reset instructions"
+      record_usage: "Record usage"
       save_password: "Save"
       sign_in: "Sign in"
     errors:
@@ -126,6 +136,9 @@ en:
       show_discarded_items: "Show discarded items"
     new:
       new_item: "New item"
+  usages:
+    new:
+      heading: "Record usage for %{item}"
   layouts:
     application:
       account_navigation: "Account navigation"
