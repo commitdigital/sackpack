@@ -10,6 +10,12 @@ class ItemsController < ApplicationController
     render :index
   end
 
+  def located
+    @location = Current.user.locations.find(params[:location_id])
+    @items_by_category = items_by_category_for(discarded: false, location: @location)
+    render :index
+  end
+
   def new
     @item = Item.new
     @categories = Current.user.categories
@@ -61,14 +67,22 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :note, :category_id, :location_id, :purchase_value_cents, :current_value_cents, :acquired_on, :discarded_on, :last_seen_on, :expected_uses)
   end
 
-  def items_by_category_for(discarded:)
-    condition = discarded ? "IS NOT NULL" : "IS NULL"
-    Current.user.categories
-                .joins(:items)
-                .includes(items: :location)
-                .where("items.discarded_on #{condition}")
-                .order(:name)
-                .group_by(&:itself)
-                .transform_values { |categories| categories.first.items.where(discarded ? "discarded_on IS NOT NULL" : "discarded_on IS NULL") }
+  def items_by_category_for(discarded: nil, location: nil)
+    items_scope = Current.user.items.includes(:location, :category)
+
+    items_scope = if discarded
+      items_scope.where("discarded_on IS NOT NULL")
+    else
+      items_scope.where("discarded_on IS NULL")
+    end
+
+    if location
+      items_scope = items_scope.where(location:)
+    end
+
+    items_scope.joins(:category)
+               .group_by(&:category)
+               .sort_by { |category, _| category.name }
+               .to_h
   end
 end

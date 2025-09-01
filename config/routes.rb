@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get :discarded
+      get "located/:location_id", action: :located, as: :located
     end
   end
   resources :locations

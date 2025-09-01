@@ -1,6 +1,12 @@
 <main>
   <h1 class="h1">
-    <%= action_name == "discarded" ? t(".discarded_items") : t(".items") %>
+    <% if action_name == "discarded" %>
+      <%= t(".discarded_items") %>
+    <% elsif action_name == "located" %>
+      <%= @location.name %>
+    <% else %>
+      <%= t(".items") %>
+    <% end %>
   </h1>
   <%= turbo_frame_tag "items" do %>
     <% @items_by_category.each do |category, items| %>

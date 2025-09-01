@@ -5,7 +5,7 @@
       <p><%= item.note %></p>
     <% end %>
     <div class="item-details">
-      <span class="location"><%= item.location.name %></span>
+      <span class="location"><%= link_to item.location.name, located_items_path(location_id: item.location.id), data: { turbo_frame: "_top" } %></span>
       <% if item.location.storage? %>
         <span class="storage-indicator">📦</span>
       <% end %>
