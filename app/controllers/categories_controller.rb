@@ -20,7 +20,6 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find(params[:id])
   end
 
   def update
@@ -32,7 +31,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @categories.destroy
+    @category.destroy
     respond_to do |format|
       format.html { redirect_to categories_path, notice: t("flash.categories.deleted") }
       format.turbo_stream { render turbo_stream: turbo_stream.remove(@category) }
